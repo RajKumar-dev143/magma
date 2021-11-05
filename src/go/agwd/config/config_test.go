@@ -96,7 +96,7 @@ func TestParseTarget(t *testing.T) {
 		{
 			target: "ipv4:localhost:1234",
 			want: resolver.Target{
-				Scheme:    "ipv4",
+				Scheme:    "tcp4",
 				Authority: "",
 				Endpoint:  "localhost:1234",
 			},
@@ -104,7 +104,7 @@ func TestParseTarget(t *testing.T) {
 		{
 			target: "ipv6:[2607:f8b0:400e:c00::ef]:443",
 			want: resolver.Target{
-				Scheme:    "ipv6",
+				Scheme:    "tcp6",
 				Authority: "",
 				Endpoint:  "[2607:f8b0:400e:c00::ef]:443",
 			},
@@ -112,7 +112,7 @@ func TestParseTarget(t *testing.T) {
 		{
 			target: "ipv6:[::]:1234",
 			want: resolver.Target{
-				Scheme:    "ipv6",
+				Scheme:    "tcp6",
 				Authority: "",
 				Endpoint:  "[::]:1234",
 			},
